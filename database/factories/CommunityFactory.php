@@ -22,7 +22,9 @@ class CommunityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'game-name' => $this->faker->word,
+            'description' => $this->faker->sentence(3),
         ];
     }
 }
