@@ -11,8 +11,15 @@ class CommunitySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+     public function run()
     {
-        //
+        $users = User::all();
+        foreach($users as $user) {
+            Community::factory(5)->create([
+                'user_id' => $user->id
+            ]);
+        }
     }
 }
+
+ 
