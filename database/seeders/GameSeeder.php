@@ -13,6 +13,11 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = User::all();
+        foreach($users as $user) {
+            Game::factory(5)->create([
+                'user_id' => $user->id
+            ]);
+        }
     }
 }
