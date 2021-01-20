@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('games', \App\Http\Controllers\GameController::class);
+
 Route::resource('communities', \App\Http\Controllers\CommunityController::class);
 
 
