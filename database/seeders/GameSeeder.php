@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Community;
+use App\Models\Game;
 use Illuminate\Database\Seeder;
 
 class GameSeeder extends Seeder
@@ -11,13 +13,13 @@ class GameSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+     public function run()
     {
-        $users = User::all();
-        foreach($users as $user) {
-            Game::factory(5)->create([
-                'user_id' => $user->id
+        Game::create([
+			'name' => 'League Of Legends',
+			'developer' => 'Riot Games',
+			'description' => 'Jogo de 10 jogadores (5x5), para destruir o nexus inimigo',
+			'user_id' => 1,
             ]);
         }
     }
-}

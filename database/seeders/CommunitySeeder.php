@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Community;
 use Illuminate\Database\Seeder;
+
 
 class CommunitySeeder extends Seeder
 {
@@ -13,13 +15,14 @@ class CommunitySeeder extends Seeder
      */
      public function run()
     {
-        $users = User::all();
-        foreach($users as $user) {
-            Community::factory(5)->create([
-                'user_id' => $user->id
+		Community::create([
+			'name' => 'Communidade de LoL',
+			'gamename' => 'League Of Legends',
+			'description' => 'Communidade cheia de jogadores',
+			'user_id' => 1,
+		
             ]);
         }
     }
-}
 
  

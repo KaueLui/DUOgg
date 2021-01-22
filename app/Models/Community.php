@@ -15,7 +15,7 @@ class Community extends Model
      */
     protected $fillable = [
         'name',
-        'game-name',
+        'gamename',
         'description',
     ];
 }
