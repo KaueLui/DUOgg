@@ -19,6 +19,19 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            
+            <div class="mt-4">
+                <x-label for="nickname" :value="__('Nickname')" />
+
+                <x-input id="nickname" class="block mt-1 w-full" type="text" name="nickname" :value="old('nickname')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="platform" :value="__('Platform')" />
+
+                <x-input id="platform" class="block mt-1 w-full" type="Text" name="platform" :value="old('platform')" required />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
