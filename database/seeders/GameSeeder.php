@@ -15,11 +15,11 @@ class GameSeeder extends Seeder
      */
      public function run()
     {
-        Game::create([
-			'name' => 'League Of Legends',
-			'developer' => 'Riot Games',
-			'description' => 'Jogo de 10 jogadores (5x5), para destruir o nexus inimigo',
-			'user_id' => 1,
+        $Communities = Community::all();
+        foreach($Communities as $community){
+            Game::factory(5)->create([
+                'community_id'=> $community->id
             ]);
         }
     }
+}

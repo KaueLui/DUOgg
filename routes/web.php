@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,9 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\CommunityController;
+use \App\Models\Community;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +27,10 @@ Route::get('/dashboard', [HomeController::class , 'dashboard'])->middleware(['au
 Route::resource('games', \App\Http\Controllers\GameController::class);
 
 Route::resource('communities', \App\Http\Controllers\CommunityController::class);
+
+Route::post('/communities/new', [CommunityController::class, 'store'])->name('add-community');
+Route::model('community', Community::class);
+
 
 
 require __DIR__.'/auth.php';

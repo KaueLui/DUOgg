@@ -35,8 +35,15 @@ class CommunityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Community::create([
+            'name' =>$request->name,
+            'gamename' =>$request->gammename,
+            'description' =>$request->description,
+            'user_id' =>Auth::user()->id,
+        ]);
+        return redirect('dashboard');
     }
+    
 
     /**
      * Display the specified resource.

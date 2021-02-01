@@ -17,5 +17,14 @@ class Game extends Model
         'name',
         'developer',
         'description',
+        'user_id',
     ];
+
+public function user(){
+    return $this->belongsTo(User::class);
+}
+
+
+
+
 }

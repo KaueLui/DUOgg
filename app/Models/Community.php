@@ -17,5 +17,11 @@ class Community extends Model
         'name',
         'gamename',
         'description',
+        'user_id',
     ];
+public function user(){
+    return $this->belongsTo(User::class);
+}
+
+
 }
