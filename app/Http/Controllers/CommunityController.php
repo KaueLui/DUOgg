@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Community;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CommunityController extends Controller
 {
@@ -88,5 +90,9 @@ class CommunityController extends Controller
     public function destroy(Community $community)
     {
         //
+        $community->delete();
+        return redirect('dashboard');
+
+        //Log::debug('community' . $community->id);
     }
 }

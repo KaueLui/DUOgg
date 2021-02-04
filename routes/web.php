@@ -29,6 +29,7 @@ Route::resource('games', \App\Http\Controllers\GameController::class);
 Route::resource('communities', \App\Http\Controllers\CommunityController::class);
 
 Route::post('/communities/new', [CommunityController::class, 'store'])->name('add-community');
+Route::get('/communities/delete/{community}', [CommunityController::class, 'destroy'])->name('rm-community');
 Route::model('community', Community::class);
 
 

@@ -19,6 +19,7 @@ class CreateGamesTable extends Migration
             $table->string('developer', 45)->nullable();
             $table->string('description', 300)->nullable();
             $table->integer('user_id');
+            $table->integer('community_id');
             $table->timestamps();
         });
     }
